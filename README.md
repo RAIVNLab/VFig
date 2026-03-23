@@ -7,7 +7,7 @@ This repository contains the training code for **VFig**, a vision-language model
 ```
 VFig/
 ├── rl/    # GRPO reinforcement learning training code
-└── sft/   # Supervised fine-tuning code (coming soon)
+└── sft/   # Supervised fine-tuning code
 ```
 
 ## Getting Started
