@@ -1,0 +1,17 @@
+data/
+output/
+hf_cache/
+wandb_logs/
+logs/
+llamaboard_cache/
+tmp/
+*.log
+*.out
+*.err
+__pycache__/
+*.pyc
+*.egg-info/
+.env
+.gradio/
+.env.local
+.env

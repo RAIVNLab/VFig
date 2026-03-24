@@ -12,4 +12,5 @@ VFig/
 
 ## Getting Started
 
+- For SFT training, see [sft/README.md](sft/README.md).
 - For RL training, see [rl/README.md](rl/README.md).
