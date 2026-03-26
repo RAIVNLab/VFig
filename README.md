@@ -6,10 +6,10 @@ This repository contains the official training code for **VFig**, a vision-langu
 
 ```
 VFig/
-├── rl/         # GRPO reinforcement learning training code
-├── sft/        # Supervised fine-tuning code
-├── inference/  # Inference script and example images
-└── eval/       # Evaluation scripts
+├── rl/         # GRPO-based reinforcement learning pipeline for reward-driven SVG generation
+├── sft/        # Supervised fine-tuning pipeline built on LLaMA-Factory (Qwen2.5-VL, InternVL3, Qwen3-VL)
+├── inference/  # Quick inference script for single-image SVG generation using the pretrained model
+└── eval/       # Benchmark evaluation scripts using Gemini/GPT judges and code cleanliness metrics
 ```
 
 ## Getting Started
