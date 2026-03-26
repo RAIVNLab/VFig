@@ -31,6 +31,31 @@ conda activate llama
 pip install -e ".[torch,metrics]"
 ```
 
+## Data Preparation
+
+We provide `data/prepare_fine_tune_data.py` to convert raw SVG files into a LLaMA-Factory compatible training dataset.
+
+**What it does:**
+1. Reads `.svg` files from a source directory
+2. Renders each SVG to a PNG image (via `cairosvg`)
+3. Pairs each image with the original SVG code and a randomly sampled instruction prompt
+4. Outputs a JSON file in LLaMA-Factory's ShareGPT multimodal format
+
+**Usage:**
+
+```bash
+# Edit the CONFIG section at the top of the script:
+#   SVG_DIR  — path to your SVG source directory
+#   OUTPUT_JSON — output filename (e.g. finetune_data_arxiv.json)
+#   RENDER_DIR  — directory to save rendered PNGs
+
+python data/prepare_fine_tune_data.py
+```
+
+**After running**, place the output JSON and rendered images under `LLaMA-Factory/data/`, then register the dataset in `LLaMA-Factory/data/dataset_info.json`.
+
+Then reference `my_dataset` in your training YAML under `dataset:`.
+
 ## Training
 
 We provide training configs for **Qwen2.5-VL**, **InternVL3**, and **Qwen3-VL** under `LLaMA-Factory/examples/train_lora/`. Training follows a two-stage pipeline:
@@ -86,31 +111,10 @@ Run inference with a fine-tuned checkpoint using the scripts under `inference/`:
 ```bash
 cd sft/inference
 
-# Qwen2.5-VL
-python eval_qwen2.5_model_sft.py
+# Qwen3-VL-4B
+python eval_qwen_model_sft.py
 # or via SLURM:
-sbatch eval_qwen2.5_model_sft.sh
-
-# InternVL3
-python eval_intern3.5_model_sft.py
-# or via SLURM:
-sbatch eval_intern3.5_model_sft.sh
-```
-
-## Evaluation
-
-Evaluate generated SVGs using the scripts under `eval/`:
-
-```bash
-cd eval
-export GEMINI_API_KEY="your_gemini_api_key"
-export OPENAI_API_KEY="your_openai_api_key"
-
-# Score SVG quality using Gemini and GPT judges
-python eval_metrics_gemini_gpt_white.py
-
-# Compute SVG code cleanliness metric
-python code_cleanliness.py
+sbatch eval_qwen_model_sft.sh
 ```
 
 ## Acknowledgements
