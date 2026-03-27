@@ -65,3 +65,16 @@ python eval_metrics_gemini_gpt_white.py
 # Compute SVG code cleanliness metric
 python code_cleanliness.py
 ```
+
+## Citation
+```
+@misc{he2026vfigvectorizingcomplexfigures,
+      title={VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models}, 
+      author={Qijia He and Xunmei Liu and Hammaad Memon and Ziang Li and Zixian Ma and Jaemin Cho and Jason Ren and Daniel S Weld and Ranjay Krishna},
+      year={2026},
+      eprint={2603.24575},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.24575}, 
+}
+```
