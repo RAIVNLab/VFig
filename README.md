@@ -17,6 +17,7 @@ VFig/
 
 - For SFT training, see [sft/README.md](sft/README.md).
 - For RL training, see [rl/README.md](rl/README.md).
+- For Standalone Rule-Based Evaluation, see [rule-based-eval/README.md](rule-based-eval/README.md).
 
 ## Inference
 
