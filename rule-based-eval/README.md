@@ -4,7 +4,7 @@ Rule-based evaluation framework for scoring model-generated SVG diagrams against
 
 ---
 
-## Repository Layout
+## File Structure
 
 `input/`, `eval-set/`, and `output/` are not committed and must be created locally. Run `python run_all_evals.py --setup` to create the skeleton, then populate with your data.
 
