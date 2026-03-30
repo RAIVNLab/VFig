@@ -6,10 +6,11 @@ This repository contains the official training code for **VFig**, a vision-langu
 
 ```
 VFig/
-├── rl/         # GRPO-based reinforcement learning pipeline for reward-driven SVG generation
-├── sft/        # Supervised fine-tuning pipeline built on LLaMA-Factory (Qwen2.5-VL, InternVL3, Qwen3-VL)
-├── inference/  # Quick inference script for single-image SVG generation using the pretrained model
-└── eval/       # Benchmark evaluation scripts using Gemini/GPT judges and code cleanliness metrics
+├── rl/               # GRPO-based reinforcement learning pipeline for reward-driven SVG generation
+├── sft/              # Supervised fine-tuning pipeline built on LLaMA-Factory (Qwen2.5-VL, InternVL3, Qwen3-VL)
+├── inference/        # Quick inference script for single-image SVG generation using the pretrained model
+├── eval/             # Benchmark evaluation scripts using Gemini/GPT judges and code cleanliness metrics
+└── rule-based-eval/  # Rule-based evaluation framework scoring shapes and arrows across structural and visual metrics
 ```
 
 ## Getting Started
@@ -66,15 +67,22 @@ python eval_metrics_gemini_gpt_white.py
 python code_cleanliness.py
 ```
 
+## Rule-Based Evaluation
+
+[`rule-based-eval/`](rule-based-eval/) is a standalone, reference-free evaluation framework that scores model-generated SVG diagrams against ground-truth SVGs using deterministic rules — no LLM judge required. It evaluates shape attributes (type, color, position, font, aspect ratio) and arrow attributes (source, destination, head, curve, color) independently, producing per-metric and composite scores.
+
+See [`rule-based-eval/README.md`](rule-based-eval/README.md) for full usage instructions.
+
 ## Citation
+
 ```
 @misc{he2026vfigvectorizingcomplexfigures,
-      title={VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models}, 
+      title={VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models},
       author={Qijia He and Xunmei Liu and Hammaad Memon and Ziang Li and Zixian Ma and Jaemin Cho and Jason Ren and Daniel S Weld and Ranjay Krishna},
       year={2026},
       eprint={2603.24575},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2603.24575}, 
+      url={https://arxiv.org/abs/2603.24575},
 }
 ```
