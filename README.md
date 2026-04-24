@@ -1,4 +1,11 @@
 # VFig: Vectorizing Complex Figures with Vision-Language Models
+<p align="center">
+  <a href="https://arxiv.org/pdf/2603.24575">📄 Paper</a> |
+  <a href="https://vfig-proj.github.io/">🌐 Website</a> |
+  <a href="https://huggingface.co/spaces/allenai/VFig-Image2SVG-Demo">💻 Demo</a> |
+  <a href="https://huggingface.co/XunmeiLiu/VFIG-4B">🤗 Models</a> |
+  <a href="https://huggingface.co/datasets/QijiaHe/VFIG-Data">🤗 Data</a>
+</p>
 
 This repository contains the official training code for **VFig**, a vision-language model trained to generate SVG figures from scientific paper images.
 
